@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import { fetchNewsForCountry } from '../server/services/newsService';
-import { generateIntelligenceReport } from '../server/services/aiService';
-import { TRACKED_COUNTRIES, CountryData } from '../server/types';
+import { fetchNewsForCountry } from './_shared/newsService';
+import { generateIntelligenceReport } from './_shared/aiService';
+import { TRACKED_COUNTRIES, CountryData } from './_shared/types';
 
 const app = express();
 app.use(cors());

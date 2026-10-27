@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { fetchNewsForCountry } from '../../server/services/newsService';
-import { generateIntelligenceReport } from '../../server/services/aiService';
-import { TRACKED_COUNTRIES, CountryData } from '../../server/types';
+import { fetchNewsForCountry } from '../_shared/newsService';
+import { generateIntelligenceReport } from '../_shared/aiService';
+import { TRACKED_COUNTRIES, CountryData } from '../_shared/types';
 
 const cache = new Map<string, { data: CountryData; timestamp: number }>();
 const CACHE_TTL = 5 * 60 * 1000;

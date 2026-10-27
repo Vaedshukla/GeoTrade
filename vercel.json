@@ -3,14 +3,6 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/api/countries",
-      "destination": "/api/countries"
-    },
-    {
-      "source": "/api/country/:id",
-      "destination": "/api/country/[id]"
-    },
-    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
