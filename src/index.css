@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Core Colors */
+  --color-bg-base: #030508;
+  --color-bg-panel: rgba(10, 15, 24, 0.65);
+  --color-neon-blue: #00F0FF;
+  --color-neon-blue-dim: rgba(0, 240, 255, 0.2);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8B9BB4;
+  
+  /* Status Colors */
+  --color-status-stable: #00FF66;
+  --color-status-watch: #00F0FF;
+  --color-status-elevated: #FFAA00;
+  --color-status-high: #FF5500;
+  --color-status-critical: #FF2A2A;
+
+  /* Typography */
+  --font-primary: 'Space Grotesk', sans-serif;
+  
+  /* Effects */
+  --glass-blur: blur(16px);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  --glow-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  overflow: hidden; /* It's a dashboard, we want no global scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--color-bg-panel);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glow-shadow);
+  border-radius: 12px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #FFFFFF, var(--color-neon-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--color-neon-blue-dim);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 42, 42, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(255, 42, 42, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(255, 42, 42, 0.2); }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-blue-dim);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-blue);
+}
